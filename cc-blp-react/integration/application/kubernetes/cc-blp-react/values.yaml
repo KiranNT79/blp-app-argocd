@@ -20,6 +20,17 @@ image:
     - name: regcred
 
 
+dockerConfigJson: |
+  {
+    "auths": {
+        "dlcmdevsharedacrregistry.azurecr.io": {
+            "username": "dlcmdevsharedacrregistry",
+            "password": "pni+dFreFs5ICn1oY5M5PFoEu67Cehoo",
+        }
+    }
+  }
+
+
 env:
   SPRING_PROFILES_ACTIVE: azure
 
