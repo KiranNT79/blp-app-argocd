@@ -30,14 +30,16 @@ jobs:
 
       - name: Set up git user
         run: |
-          git config --global user.email "kiran.nagarkar@t-systems.com"
-          git config --global user.name "KiranNT79"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
 
       - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git add ./frontend/cc-blp-react/argo-application/application.yaml
           git commit -m "Update ArgoCD targetRevision to ${GITHUB_SHA}"
-          git push
+          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
 
       - name: ArgoCD Sync
         run: |
