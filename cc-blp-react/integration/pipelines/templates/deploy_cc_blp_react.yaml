@@ -1,0 +1,321 @@
+# (c) 2022 CARIAD SE, All rights reserved.
+#
+# NOTICE:
+# All the information and materials contained herein, including the intellectual and technical concepts, are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+# The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials that are confidential and/or proprietary and trade secrets of CARIAD SE.
+# Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+# The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its contents or to manufacture, use or sell anything that it may describe in whole or in part.
+
+parameters:
+  - name: name
+    type: string
+    default: 'default'
+  - name: stage
+    type: string
+    default: 'dev'
+  - name: checkChanges
+    type: boolean
+    default: false
+  - name: agentPool
+    type: string
+    default: ''
+  - name: aksEnvironment
+    type: string
+    default: ''
+  - name: KeyvaultName
+    type: string
+  - name: TenantId
+    type: string
+    default: 'c5f6f6e0-4c59-4aa1-bcd7-033f5f211b1c'
+  - name: RegistryLoginServer
+    type: string
+  - name: cloudIdpTechnicalLogin
+    type: string
+    default: 'https://idp.cloud.vwgroup.com/auth/realms/kums-mfa/protocol/openid-connect/token'
+  - name: serviceConnection
+    type: string
+    default: ''
+  - name: tag
+    type: string
+    default: ''
+  - name: jobName
+    type: string
+    default: ''
+  - name: r4cProjectStagePrefix
+    type: string
+    default: ''
+  - name: r4cRestEndpoint
+    type: string
+    default: ''
+  - name: aecR4cRestEndpoint
+    type: string
+    default: ''
+  - name: oemilUrl
+    type: string
+    default: ''
+  - name: r4cUiLinkBaseUrl
+    type: string
+    default: ''
+  - name: aecR4cUiLinkBaseUrl
+    type: string
+    default: ''
+  - name: r4cCdnHostUrl
+    type: string
+    default: ''
+  - name: r4cFallbackEntryOwner
+    type: string
+    default: ''
+  - name: dlcmEventhubHost
+    type: string
+    default: 'dlcmeventhub.servicebus.windows.net'
+  - name: wait
+    type: boolean
+    default: true
+  - name: drmDataSourceUrl
+    type: string
+    default: ''
+  - name: dlcmGateDataSourceUrl
+    type: string
+    default: ''
+  - name: e311OruSoftwareDataSourceUrl
+    type: string
+    default: ''
+  - name: sumoAecDataSourceUrl
+    type: string
+    default: ''
+  - name: umDataSourceUrl
+    type: string
+    default: ''
+  - name: dlmDataSourceUrl
+    type: string
+    default: ''
+  - name: fgwDataSourceUrl
+    type: string
+    default: ''
+  - name: vinListManagementDataSourceUrl
+    type: string
+    default: ''
+  - name: testVinManagementDataSourceUrl
+    type: string
+    default: ''
+  - name: dtMod34DataSourceUrl
+    type: string
+    default: ''
+  - name: cmOru2DataSourceUrl
+    type: string
+    default: ''
+  - name: cmBigloopAdaDataSourceUrl
+    type: string
+    default: ''
+  - name: crOru23DataSourceUrl
+    type: string
+    default: ''
+  - name: commentsDataSourceUrl
+    type: string
+    default: ''
+  - name: drmdDataSourceUrl
+    type: string
+    default: ''
+  - name: dataSourceDriver
+    type: string
+    default: ''
+  - name: dataSourcePlatform
+    type: string
+    default: ''
+  - name: dtMod3PushMockEnabled
+    type: string
+    default: 'true'
+  - name: dtMod4URI
+    type: string
+    default: 'http://mocks-service.mocks.svc.cluster.local:8080/dt-mod34/mod4'
+  - name: dtIdentityURI
+    type: string
+    default: 'http://mocks-service.mocks.svc.cluster.local:8080/dt-mod34/mod4'
+  - name: dtEmailMockEnabled
+    type: string
+    default: 'true'
+  - name: dtArvatoSubjectRegex
+    type: string
+    default: ''
+  - name: dtMlaasOffset
+    type: string
+    default: ''
+  - name: dtMlaasCron
+    type: string
+    default: ''
+  - name: dtCleanupCron
+    type: string
+    default: '-'
+  - name: dtMlaasEndpoint
+    type: string
+    default: 'http://mocks-service.mocks.svc.cluster.local:8080/dt-mod34/mlaas'
+  - name: logoutURI
+    type: string
+    default: ''
+  - name: springProfile
+    type: string
+    default: 'azure'
+  - name: namespace
+    type: string
+    default: 'cheetahs'
+  - name: supersetNamespace
+    type: string
+    default: 'superset-custom-auth'
+  - name: helmValueFile
+    type: string
+    default: 'values.yaml'
+  - name: forceUpgrade
+    type: boolean
+    default: false
+  - name: keycloakIssuerUriEnv
+    type: string
+    default: ''
+  - name: keycloakJwkUriEnv
+    type: string
+    default: ''
+  - name: keycloakRedirectUriEnv
+    type: string
+    default: ''
+  - name: keycloakServerUrlEnv
+    type: string
+    default: ''
+  - name: chartRepoPath
+    type: string
+    default: '$(Build.SourcesDirectory)/frontend/cc-blp-react/integration/application/kubernetes/cc-blp-react'
+  - name: moduleEnabled
+    type: boolean
+    default: true
+  - name: cmtUrl
+    type: string
+    default: ''
+  - name: useCaseLayerBaseUrl
+    type: string
+    default: ''
+  - name: arguments
+    type: string
+    default: ''
+  - name: digitalTwinStage
+    type: string
+    default: ''
+  - name: digitalTwinStageImported
+    type: string
+    default: ''
+  - name: digitalTwinStageStandalone
+    type: string
+    default: ''
+  - name: digitalTwinIntApiUrl
+    type: string
+    default: ''
+  - name: digitalTwinIntTokenUri
+    type: string
+    default: ''
+  - name: digitalTwinIntApiScope
+    type: string
+    default: ''
+  - name: digitalTwinApprovalApiUrl
+    type: string
+    default: ''
+  - name: digitalTwinApprovalTokenUri
+    type: string
+    default: ''
+  - name: digitalTwinApprovalApiScope
+    type: string
+    default: ''
+  - name: digitalTwinLiveApiUrl
+    type: string
+    default: ''
+  - name: digitalTwinLiveTokenUri
+    type: string
+    default: ''
+  - name: digitalTwinLiveApiScope
+    type: string
+    default: ''
+  - name: vwacIntApiUrl
+    type: string
+    default: ''
+  - name: vwacIntTokenUri
+    type: string
+    default: ''
+  - name: vwacIntApiScope
+    type: string
+    default: ''
+  - name: vwacApprovalApiUrl
+    type: string
+    default: ''
+  - name: vwacApprovalTokenUri
+    type: string
+    default: ''
+  - name: vwacApprovalApiScope
+    type: string
+    default: ''
+  - name: vwacLiveApiUrl
+    type: string
+    default: ''
+  - name: vwacLiveTokenUri
+    type: string
+    default: ''
+  - name: vwacLiveApiScope
+    type: string
+    default: ''
+  - name: region
+    type: string
+    default: ''
+
+jobs:
+  - deployment: deploy
+    displayName: 'Deploy CC blp react to cheetahs namespace'
+    # ${{ if eq( parameters['checkChanges'], 'true')  }}:
+    #   dependsOn: CheckChanges_${{ parameters.jobName }}
+    #   condition: and(eq('${{ parameters.moduleEnabled }}', 'true'),or(eq('${{ parameters.name }}', 'frontend-gateway'),eq(dependencies.CheckChanges_${{ parameters.jobName }}.outputs['check_changes.${{ parameters.jobName }}_DEPLOYMENT'], 'true')))
+    # ${{ else }}:
+    #   condition: eq('${{ parameters.moduleEnabled }}', 'true')
+    variables:
+      - template: ../../pipelines/variables/data_platform_coefficients.yaml
+    pool: 'DLCM-dev-Pool'
+    environment: '${{ parameters.aksEnvironment }}'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - checkout: self
+              path: s
+            - task: AzureKeyVault@2
+              displayName: 'Key Vault'
+              inputs:
+                azureSubscription: '${{ parameters.serviceConnection }}'
+                KeyVaultName: ${{ parameters.KeyvaultName }}
+                SecretsFilter: 'ApplicationinsightsConnectionString,ClientIdUserAssignedIdentityAks,DatabricksDashboardToken,DatabricksWorkspaceUrl,DatabricksWorkspaceId,DatabricksClusterSuperset,AppConfigurationConnectionString,SupersetAdminPassword'
+
+            - task: AzureCli@2
+              displayName: 'Bind Aks context'
+              inputs:
+                scriptType: bash
+                scriptLocation: inlineScript
+                azureSubscription: '${{ parameters.serviceConnection }}'
+                addSpnToEnvironment: true
+                inlineScript: |
+                  az cloud set AzureCloud
+                  az aks get-credentials --resource-group dlcm-${{ parameters.stage }}-backend-rg --name dlcm-${{ parameters.stage }}-backend-aks
+                  kubectl get namespaces
+                  echo -e '\n******'
+
+
+            - task: HelmDeploy@0
+              displayName: 'HelmDeploy for CC blp react app'
+              inputs:
+                name: 'Deploy cc blp react'
+                connectionTye: 'Azure Resource Manager'
+                azureSubscriptionEndpoint: '${{ parameters.serviceConnection }}'
+                azureResourceGroup: 'dlcm-${{ parameters.stage }}-backend-rg'
+                kubernetesCluster: 'dlcm-${{ parameters.stage }}-backend-aks'
+                command: upgrade
+                force: '${{ parameters.forceUpgrade }}'
+                chartType: FilePath
+                chartPath: '${{parameters.chartRepoPath}}'
+                releaseName: 'cc-blp-react'
+                namespace: 'cheetahs'
+                # install: true
+                waitForExecution: ${{ parameters.wait }}
+                valueFile: '${{ parameters.chartRepoPath }}/${{ parameters.helmValueFile }}'
+                arguments: '--set env.LOG_LEVEL="INFO"
+                          '

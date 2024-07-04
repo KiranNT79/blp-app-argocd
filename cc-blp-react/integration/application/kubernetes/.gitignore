@@ -1,0 +1,4 @@
+.idea
+secrets.cfg
+.DS_Store
+*.iml
