@@ -14,6 +14,24 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: 'Please choose the stage'
+        required: true
+        default: 'dev'
+        type: string
+      environment:
+        description: 'Please choose the environment'
+        required: true
+        default: 'gitc'
+        type: string
+      branch:
+        description: 'GitHub branch to build'
+        required: true
+        default: 'main'
+        type: string
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +45,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.inputs.branch }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
