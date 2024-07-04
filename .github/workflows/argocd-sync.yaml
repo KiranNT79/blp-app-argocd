@@ -9,7 +9,11 @@ on:
       - hotfix/**
       - test/**
 
+
 jobs:
+  job-name:
+    permissions:
+      contents: write
   update-argocd:
     runs-on: ubuntu-latest
 
