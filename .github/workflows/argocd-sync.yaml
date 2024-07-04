@@ -28,6 +28,11 @@ jobs:
             exit 1
           fi
 
+      - name: Set up git user
+        run: |
+          git config --global user.email "kiran.nagarkar@t-systems.com"
+          git config --global user.name "KiranNT79"
+
       - name: Commit and push changes
         run: |
           git add ./frontend/cc-blp-react/argo-application/application.yaml
