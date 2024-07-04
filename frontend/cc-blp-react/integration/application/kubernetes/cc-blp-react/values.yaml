@@ -16,8 +16,8 @@ image:
   tag: latest
   pullPolicy: Always
 
-#   imagePullSecrets:
-#     - name: regcred
+  imagePullSecrets:
+    - name: acr-repo
 
 
 # dockerConfigJson: |
