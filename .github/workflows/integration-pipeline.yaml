@@ -5,10 +5,10 @@ on:
   push:
     branches:
       - main
-    #   - 'cheetahs/*'
-    # paths:
-    #   - frontend/cc-blp-react/**
-    #   - integration/pipelines/build_and_deploy_blp_react.yaml
+      - 'cheetahs/*'
+    paths:
+      - frontend/cc-blp-react/**
+      - integration/pipelines/build_and_deploy_blp_react.yaml
 
   pull_request:
     branches:
@@ -22,18 +22,25 @@ jobs:
       YARN_CACHE_FOLDER: ${{ github.workspace }}/.yarn
       DOCKER_CACHE_FOLDER: ${{ github.workspace }}/docker
       DLCM_CC_BLUEPRINTS_PATH: ${{ github.workspace }}/frontend
-      BLP_REACT_ROOT: /frontend/cc-blp-react
+      BLP_REACT_ROOT: ${{ github.workspace }}/frontend/cc-blp-react
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          path: s
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '19'
+
+      - name: List files for debugging
+        run: |
+          echo "Listing root directory"
+          ls -la
+          echo "Listing frontend directory"
+          ls -la frontend
+          echo "Listing cc-blp-react directory"
+          ls -la frontend/cc-blp-react
 
       - name: Cache Yarn dependencies
         uses: actions/cache@v3
@@ -55,14 +62,14 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Log in to Docker Hub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v2
         with:
           registry: ${{ secrets.ACR_REGISTRY_LOGIN_SERVER }}
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v2
         with:
           context: ${{ env.BLP_REACT_ROOT }}
           file: ${{ env.BLP_REACT_ROOT }}/Dockerfile
