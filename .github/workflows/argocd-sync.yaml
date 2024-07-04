@@ -9,6 +9,7 @@ on:
       - hotfix/**
       - test/**
 
+
 jobs:
   update-argocd:
     runs-on: ubuntu-latest
@@ -20,7 +21,7 @@ jobs:
       - name: Update ArgoCD application YAML
         id: update_yaml
         run: |
-          APP_FILE="./cc-blp-react/application.yaml"
+          APP_FILE="./frontend/cc-blp-react/argo-application/application.yaml"
           if [ -f "$APP_FILE" ]; then
             sed -i "s#targetRevision:.*#targetRevision: \"${GITHUB_SHA}\"#g" "$APP_FILE"
           else
@@ -28,11 +29,18 @@ jobs:
             exit 1
           fi
 
-      - name: Commit and push changes
+      - name: Set up git user
         run: |
-          git add ./cc-blp-react/application.yaml
+          git config --global user.email "kiran.nagarkar@t-systems.com"
+          git config --global user.name "KiranNT79"
+
+      - name: Commit and push changes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git add ./frontend/cc-blp-react/argo-application/application.yaml
           git commit -m "Update ArgoCD targetRevision to ${GITHUB_SHA}"
-          git push
+          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
 
       - name: ArgoCD Sync
         run: |
