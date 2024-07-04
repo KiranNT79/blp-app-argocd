@@ -20,7 +20,7 @@ jobs:
       - name: Update ArgoCD application YAML
         id: update_yaml
         run: |
-          APP_FILE="https://github.com/KiranNT79/blp-app-argocd/blob/main/cc-blp-react/application.yaml"
+          APP_FILE="./cc-blp-react/application.yaml"
           if [ -f "$APP_FILE" ]; then
             sed -i "s#targetRevision:.*#targetRevision: \"${GITHUB_SHA}\"#g" "$APP_FILE"
           else
@@ -30,7 +30,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git add https://github.com/KiranNT79/blp-app-argocd/blob/main/cc-blp-react/application.yaml
+          git add ./cc-blp-react/application.yaml
           git commit -m "Update ArgoCD targetRevision to ${GITHUB_SHA}"
           git push
 
