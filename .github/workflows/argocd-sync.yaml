@@ -11,9 +11,6 @@ on:
 
 
 jobs:
-  job-name:
-    permissions:
-      contents: write
   update-argocd:
     runs-on: ubuntu-latest
 
