@@ -1,0 +1,10 @@
+{
+  "extends": "ts-config-single-spa",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declarationDir": "dist",
+    "skipLibCheck": true
+  },
+  "files": ["src/dlcm-cc-blp-react.tsx"],
+  "include": ["src/**/*"]
+}
