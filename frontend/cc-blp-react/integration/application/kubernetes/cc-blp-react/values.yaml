@@ -17,7 +17,7 @@ image:
   pullPolicy: Always
 
   imagePullSecrets:
-    - name: acr-repo
+    - name: acr-creds
 
 
 # dockerConfigJson: |
