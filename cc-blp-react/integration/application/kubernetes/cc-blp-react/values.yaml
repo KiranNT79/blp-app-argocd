@@ -16,19 +16,19 @@ image:
   tag: latest
   pullPolicy: Always
 
-  imagePullSecrets:
-    - name: regcred
+#   imagePullSecrets:
+#     - name: regcred
 
 
-dockerConfigJson: |
-  {
-    "auths": {
-        "dlcmdevsharedacrregistry.azurecr.io": {
-            "username": "dlcmdevsharedacrregistry",
-            "password": "pni+dFreFs5ICn1oY5M5PFoEu67Cehoo",
-        }
-    }
-  }
+# dockerConfigJson: |
+#   {
+#     "auths": {
+#         "dlcmdevsharedacrregistry.azurecr.io": {
+#             "username": "dlcmdevsharedacrregistry",
+#             "password": "pni+dFreFs5ICn1oY5M5PFoEu67Cehoo",
+#         }
+#     }
+#   }
 
 
 env:
