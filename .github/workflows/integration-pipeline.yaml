@@ -22,7 +22,7 @@ jobs:
       YARN_CACHE_FOLDER: ${{ github.workspace }}/.yarn
       DOCKER_CACHE_FOLDER: ${{ github.workspace }}/docker
       DLCM_CC_BLUEPRINTS_PATH: ${{ github.workspace }}/frontend
-      BLP_REACT_ROOT: ${{ github.workspace }}/frontend/cc-blp-react
+      BLP_REACT_ROOT: /frontend/cc-blp-react
 
     steps:
       - name: Checkout repository
