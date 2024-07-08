@@ -13,7 +13,7 @@
 replicaCount: 1
 image:
   repository: dlcmdevsharedacrregistry.azurecr.io/dlcm/cc_blp_react
-  tag: v1.0
+  tag: latest
   pullPolicy: Always
 
 imagePullSecrets:
