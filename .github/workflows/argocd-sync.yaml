@@ -66,11 +66,11 @@ jobs:
     - name: Update Helm chart values
       run: |
         # Choose a meaningful tag, e.g., 'latest', 'v1.0', etc.
-        IMAGE_TAG=latest
-        sed -i "s/tag: .*/tag: ${IMAGE_TAG}/" helm/myapp/values.yaml
+        IMAGE_TAG=v1.0
+        sed -i "s/tag: .*/tag: ${IMAGE_TAG}/" ./frontend/cc-blp-react/integration/application/kubernetes/cc-blp-react/values.yaml
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        git add helm/myapp/values.yaml
+        git add ./frontend/cc-blp-react/integration/application/kubernetes/cc-blp-react/values.yaml
         git diff-index --quiet HEAD || git commit -m "Update image tag to ${IMAGE_TAG}" && git push
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
