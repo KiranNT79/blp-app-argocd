@@ -56,7 +56,7 @@ ingress:
   selector:
     app: cc-blp-react-service
   hosts:
-    - host: cheetahs.dev.dlcm.vwgroup.com
+    - host: mfe.dev.dlcm.vwgroup.com
       paths:
         - path: /blp-react(/|$)(.*)
           pathType: ImplementationSpecific
