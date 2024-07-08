@@ -66,7 +66,7 @@ jobs:
     - name: Update Helm chart values
       run: |
         # Choose a meaningful tag, e.g., 'latest', 'v1.0', etc.
-        IMAGE_TAG=v1.0
+        IMAGE_TAG=latest
         sed -i "s/tag: .*/tag: ${IMAGE_TAG}/" ./frontend/cc-blp-react/integration/application/kubernetes/cc-blp-react/values.yaml
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
