@@ -1,47 +1,76 @@
-name: Update ArgoCD TargetRevision and Sync
+# name: Update ArgoCD TargetRevision and Sync
+
+# on:
+#   push:
+#     branches:
+#       - main
+#       - feat/**
+#       - fix/**
+#       - hotfix/**
+#       - test/**
+
+
+# jobs:
+#   update-argocd:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+
+#       - name: Update ArgoCD application YAML
+#         id: update_yaml
+#         run: |
+#           APP_FILE="./frontend/cc-blp-react/argo-application/application.yaml"
+#           if [ -f "$APP_FILE" ]; then
+#             sed -i "s#targetRevision:.*#targetRevision: \"${GITHUB_SHA}\"#g" "$APP_FILE"
+#           else
+#             echo "Application file does not exist. Exiting."
+#             exit 1
+#           fi
+
+#       - name: Set up git user
+#         run: |
+#           git config --global user.email "actions@github.com"
+#           git config --global user.name "GitHub Actions"
+
+#       - name: Commit and push changes
+#         env:
+#           GH_PAT: ${{ secrets.GH_PAT }}
+#         run: |
+#           git add ./frontend/cc-blp-react/argo-application/application.yaml
+#           git commit -m "Update ArgoCD targetRevision to ${GITHUB_SHA}"
+#           git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+
+#       - name: ArgoCD Sync
+#         run: |
+#           argocd app sync cc-blp-react --revision ${GITHUB_SHA}
+
+
+name: CD - Update Helm Chart
 
 on:
-  push:
-    branches:
-      - main
-      - feat/**
-      - fix/**
-      - hotfix/**
-      - test/**
-
+  workflow_run:
+    workflows: ["Build and Push Docker Image"]
+    types:
+      - completed
 
 jobs:
-  update-argocd:
+  update-helm:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Update ArgoCD application YAML
-        id: update_yaml
-        run: |
-          APP_FILE="./frontend/cc-blp-react/argo-application/application.yaml"
-          if [ -f "$APP_FILE" ]; then
-            sed -i "s#targetRevision:.*#targetRevision: \"${GITHUB_SHA}\"#g" "$APP_FILE"
-          else
-            echo "Application file does not exist. Exiting."
-            exit 1
-          fi
-
-      - name: Set up git user
-        run: |
-          git config --global user.email "kiran.nagarkar@t-systems.com"
-          git config --global user.name "KiranNT79"
-
-      - name: Commit and push changes
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          git add ./frontend/cc-blp-react/argo-application/application.yaml
-          git commit -m "Update ArgoCD targetRevision to ${GITHUB_SHA}"
-          git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
-
-      - name: ArgoCD Sync
-        run: |
-          argocd app sync cc-blp-react --revision ${GITHUB_SHA}
+    - name: Update Helm chart values
+      run: |
+        # Choose a meaningful tag, e.g., 'latest', 'v1.0', etc.
+        IMAGE_TAG=latest
+        sed -i "s/tag: .*/tag: ${IMAGE_TAG}/" ./frontend/cc-blp-react/integration/application/kubernetes/cc-blp-react/values.yaml
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add ./frontend/cc-blp-react/integration/application/kubernetes/cc-blp-react/values.yaml
+        git diff-index --quiet HEAD || git commit -m "Update image tag to ${IMAGE_TAG}" && git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
