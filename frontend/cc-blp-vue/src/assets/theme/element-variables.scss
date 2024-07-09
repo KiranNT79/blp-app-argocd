@@ -1,0 +1,124 @@
+/*!
+ * (c) 2022 CARIAD SE, All rights reserved.
+ *
+ * NOTICE:
+ * All the information and materials contained herein, including the intellectual and technical concepts,
+ * are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+ * The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+ * that are confidential and/or proprietary and trade secrets of CARIAD SE.
+ * Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+ * information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+ * The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+ * contents or to manufacture, use or sell anything that it may describe in whole or in part.
+ */
+
+@use '@/assets/theme/colors';
+@use '@/assets/theme/variables';
+@use '@/assets/theme/typo';
+@use '@/assets/theme/mixins';
+
+$--colors: (
+  'primary': (
+    'base': colors.$accent-050,
+  ),
+  'success': (
+    'base': colors.$success,
+  ),
+  'warning': (
+    'base': colors.$warning,
+  ),
+  'danger': (
+    'base': colors.$error,
+  ),
+  'error': (
+    'base': colors.$error,
+  ),
+  'info': (
+    'base': colors.$accent-050,
+  ),
+);
+
+$--text-colors: (
+  'regular': colors.$text-regular,
+  'primary': colors.$text-primary,
+  'secondary': colors.$text-secondary,
+  'placeholder': colors.$text-placeholder,
+  'disabled': colors.$text-disabled,
+);
+
+$customSelect: (
+  'input-color': colors.$accent-050,
+);
+
+:root {
+  --el-font-weight-primary: 300;
+  --el-font-size-base: 16px;
+  --el-component-size: 48px;
+  --el-border-radius-base: 6px;
+  --el-border-color: #{colors.$neutral-400};
+  --el-border-color-hover: #{colors.$accent-100};
+  --el-fill-color-light: #{colors.$neutral-025};
+  --el-color-primary: #{colors.$accent-050};
+  --el-color-success: #{colors.$success};
+  --el-color-warning: #{colors.$warning};
+  --el-color-danger: #{colors.$error};
+  --el-color-error: #{colors.$error};
+  --el-color-info: #{colors.$accent-050};
+  --el-message-close-size: 32px;
+}
+
+.el-radio {
+  --el-radio-input-width: 20px;
+  --el-radio-input-height: 20px;
+}
+
+.el-checkbox {
+  --el-checkbox-font-size: 16px;
+  --el-checkbox-input-width: 20px;
+  --el-checkbox-input-height: 20px;
+}
+
+.el-message-box {
+  --el-messagebox-width: 567px;
+  --el-messagebox-border-radius: 8px;
+  --el-messagebox-font-size: 24px;
+  --el-messagebox-padding-primary: 24px;
+}
+
+.el-date-picker {
+  --el-datepicker-inrange-bg-color: #{colors.$blue-100};
+  --el-datepicker-inrange-hover-bg-color: #{colors.$neutral-050};
+}
+.el-date-range-picker {
+  --el-datepicker-inrange-bg-color: #{colors.$blue-100};
+  --el-datepicker-inrange-hover-bg-color: #{colors.$neutral-050};
+}
+
+.el-tag {
+  --el-tag-font-size: 16px;
+}
+
+.el-button {
+  --el-button-hover-text-color: #{colors.$accent-100};
+  --el-button-hover-bg-color: #{colors.$neutral-white};
+  --el-button-hover-border-color: #{colors.$accent-100};
+  --el-button-active-text-color: #{colors.$accent-200};
+  --el-button-active-border-color: #{colors.$accent-200};
+  --el-button-active-bg-color: #{colors.$neutral-white};
+  --el-button-outline-color: #{colors.$accent-100};
+}
+
+.el-button--primary {
+  --el-button-hover-text-color: #{colors.$neutral-white};
+  --el-button-hover-border-color: #{colors.$accent-100};
+  --el-button-outline-color: #{colors.$accent-100};
+  --el-button-active-color: #{colors.$neutral-white};
+  --el-button-active-text-color: #{colors.$neutral-white};
+  --el-button-hover-bg-color: #{colors.$accent-100};
+  --el-button-active-border-color: #{colors.$accent-100};
+  --el-button-active-bg-color: #{colors.$accent-200};
+}
+
+.el-dropdown__popper {
+  --el-dropdown-menuItem-hover-fill: #{colors.$blue-100};
+}

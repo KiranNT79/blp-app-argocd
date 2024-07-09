@@ -1,0 +1,16 @@
+{
+    "user": "Hello, {name}",
+    "welcome": "Welcome to {tech} Blueprint",
+    "campaigns": {
+        "title": "Campaigns"
+    },
+    "swProjects": {
+        "title": "Software Projects"
+    },
+    "navigation":{
+        "goto": "Go to {pageName}"
+    },
+    "messages":{
+        "noData": "No rows to show"
+    }
+}

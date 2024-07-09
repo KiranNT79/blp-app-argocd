@@ -1,0 +1,57 @@
+/*!
+ * (c) 2022 CARIAD SE, All rights reserved.
+ *
+ * NOTICE:
+ * All the information and materials contained herein, including the intellectual and technical concepts,
+ * are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+ * The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+ * that are confidential and/or proprietary and trade secrets of CARIAD SE.
+ * Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+ * information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+ * The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+ * contents or to manufacture, use or sell anything that it may describe in whole or in part.
+ */
+
+$topbar-height-px: 200; // with active badge. can be larger depending on content (i.e. via teleport)
+$header-height-px: 56;
+$topbar-sticky-min-height-px: 800;
+
+$base-spacing: 8px;
+$layout-max-width: 1920px;
+$header-height: $header-height-px * 1px;
+$sidebar-width: 72px;
+$sidebar-width-expanded: 256px;
+$footer-height: 69px;
+$topbar-height: $topbar-height-px * 1px;
+$topbar-sticky-min-height: $topbar-sticky-min-height-px * 1px;
+
+$dlcm-font-name-regular: 'FKGrotesk-Regular';
+$dlcm-font-name-medium: 'FKGrotesk-Medium';
+$dlcm-font-name-light: 'FKGrotesk-Light';
+
+$dlcm-font-regular: $dlcm-font-name-regular, fallback1, fallback2;
+$dlcm-font-medium: $dlcm-font-name-medium, fallback1, fallback2;
+$dlcm-font-light: $dlcm-font-name-light, fallback1, fallback2;
+
+/* Images */
+$ic-arrow-down: 'ic_arrow_down';
+$ic-arrow-up: 'ic_arrow_up';
+$ic-arrow-down-white: 'ic_arrow_down_white';
+$ic-arrow-down-white-rotate-45: 'ic_arrow_down_white_rotate-45';
+
+$ic-tick-white: 'btn_checkbox_select_white';
+$ic-tick-black: 'btn_checkbox_select';
+
+$ic-download: 'ic_download';
+$ic-upload: 'ic_upload';
+
+$ic-sort-asc: 'ic_filter_ascending';
+$ic-sort-desc: 'ic_filter_descending';
+
+$ic-radiobutton: 'btn_radio_unselect';
+$ic-radiobutton-selected: 'btn_radio_select';
+$ic-checkbox: 'btn_checkbox_unselect';
+$ic-checkbox-selected: 'btn_checkbox_select';
+
+$datatable-responsecode-filter-inactive: 'ic_filter_noselect';
+$datatable-responsecode-filter-active: 'ic_filter_select';

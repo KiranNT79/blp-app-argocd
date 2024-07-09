@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="Nav-bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Layout/01---nav-bar/01---top-bar/02---profile/02---icon/01---default" transform="translate(-12.000000, -12.000000)">
+            <g id="Group" transform="translate(12.000000, 12.000000)">
+                <g id="user" transform="translate(6.000000, 6.000000)">
+                    <path d="M10,10 C7.69881348,10 5.83333333,8.13451986 5.83333333,5.83333333 C5.83333333,3.53214681 7.69881348,1.66666667 10,1.66666667 C12.3011865,1.66666667 14.1666667,3.53214681 14.1666667,5.83333333 C14.1666667,8.13451986 12.3011865,10 10,10 Z" id="Vector" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                    <path d="M17.158254,18.3333333 C17.158254,15.1083334 13.9499235,12.5 9.99992371,12.5 C6.0499239,12.5 2.84159342,15.1083334 2.84159342,18.3333333" id="Vector" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" fill-rule="nonzero"></path>
+                    <path d="M20,0 L20,20 L0,20 L0,0 L20,0 Z" id="Vector" opacity="0"></path>
+                </g>
+                <circle id="Image" stroke="#FFFFFF" stroke-width="1.5" cx="16" cy="16" r="15.25"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

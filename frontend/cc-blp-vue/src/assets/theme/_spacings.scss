@@ -1,0 +1,113 @@
+/*!
+ * (c) 2022 CARIAD SE, All rights reserved.
+ *
+ * NOTICE:
+ * All the information and materials contained herein, including the intellectual and technical concepts,
+ * are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+ * The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+ * that are confidential and/or proprietary and trade secrets of CARIAD SE.
+ * Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+ * information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+ * The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+ * contents or to manufacture, use or sell anything that it may describe in whole or in part.
+ */
+
+// tailwind-style spacing helpers
+
+@mixin spacer($i, $px: $i * 4px) {
+  @if $i < 0 {
+    .-mt-#{abs($i)} {
+      margin-top: $px !important;
+    }
+    .-mb-#{abs($i)} {
+      margin-bottom: $px !important;
+    }
+  } @else {
+    .m-#{$i} {
+      margin: $px !important;
+    }
+    .mx-#{$i} {
+      margin-left: $px !important;
+      margin-right: $px !important;
+    }
+    .my-#{$i} {
+      margin-top: $px !important;
+      margin-bottom: $px !important;
+    }
+    .mt-#{$i} {
+      margin-top: $px !important;
+    }
+    .mb-#{$i} {
+      margin-bottom: $px !important;
+    }
+    .ml-#{$i} {
+      margin-left: $px !important;
+    }
+    .mr-#{$i} {
+      margin-right: $px !important;
+    }
+    .p-#{$i} {
+      padding: $px !important;
+    }
+    .px-#{$i} {
+      padding-left: $px !important;
+      padding-right: $px !important;
+    }
+    .py-#{$i} {
+      padding-top: $px !important;
+      padding-bottom: $px !important;
+    }
+    .pt-#{$i} {
+      padding-top: $px !important;
+    }
+    .pb-#{$i} {
+      padding-bottom: $px !important;
+    }
+    .pl-#{$i} {
+      padding-left: $px !important;
+    }
+    .pr-#{$i} {
+      padding-right: $px !important;
+    }
+    .gap-#{$i} {
+      gap: $px !important;
+    }
+  }
+}
+
+@for $i from -8 through 8 {
+  // 0=0px, 1=4px, 2=8px, 3=12px, 4=16px, 5=20px, 6=24px, 7=28px, 8=32px
+  @include spacer($i);
+}
+@include spacer(9, 40px);
+@include spacer(10, 56px);
+@include spacer(11, 72px);
+@include spacer(12, 100px);
+
+@media screen and (min-width: 768px) {
+  @include spacer(9, 44px);
+  @include spacer(10, 64px);
+  @include spacer(11, 84px);
+  @include spacer(12, 116px);
+}
+@media screen and (min-width: 1600px) {
+  @include spacer(7, 32px);
+  @include spacer(8, 40px);
+  @include spacer(9, 52px);
+  @include spacer(10, 72px);
+  @include spacer(11, 96px);
+  @include spacer(12, 128px);
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}

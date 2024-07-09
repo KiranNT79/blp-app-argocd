@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+          "@dlcm/cc-blp-vue":"/vue-app/js/blpvue.js",
+          "http://localhost:8080/js/app.js":"<%= VUE_APP_DLCM_CC_BLP_VUE %>/js/app.js",
+          "http://localhost:8080/js/header.js": "<%= VUE_APP_DLCM_CC_BLP_VUE %>/js/header.js",
+          "@dlcm/cc-ui-utils-store-user": "<%= VUE_APP_DLCM_CC_UI_UTILS %>/store_user_.js",
+          "@dlcm/cc-ui-utils-store-locale": "<%= VUE_APP_DLCM_CC_UI_UTILS %>/store_locale_.js",
+          "@dlcm/cc-ui-utils-auth": "<%= VUE_APP_DLCM_CC_UI_UTILS %>/auth.js",
+          "@dlcm/cc-ui-utils-style": "<%= VUE_APP_DLCM_CC_UI_UTILS %>/style.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg width="1440px" height="900px" viewBox="0 0 1440 900" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g id="DRM_404-Error_V1-_With-Link-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <rect id="Rectangle" stroke="#979797" fill="#442EE0" x="-1" y="-1" width="1441" height="901"/>
+    <g id="Group-5" transform="translate(-24.000000, -18.000000)">
+      <g id="h" opacity="0.398210071" transform="translate(0.000000, 534.000000)" fill="#2E218E" fill-rule="nonzero">
+        <path
+          d="M12.7175926,185 L105.152778,92.6554622 L12.7175926,0 L0,12.7478992 L79.7175926,92.6554622 L0,171.941176 L12.7175926,185 Z M108.25463,185 L201,92.6554622 L108.25463,0 L95.537037,12.7478992 L175.25463,92.6554622 L95.537037,171.941176 L108.25463,185 Z"
+          id="Shape"></path>
+      </g>
+      <g id="h-copy" opacity="0.398210071" transform="translate(1372.000000, 146.000000) rotate(-180.000000) translate(-1372.000000, -146.000000) translate(1276.000000, 58.000000)" fill="#2E218E"
+         fill-rule="nonzero">
+        <path
+          d="M12.1481481,176 L100.444444,88.1478992 L12.1481481,-2.27373675e-13 L0,12.1277311 L76.1481481,88.1478992 L0,163.576471 L12.1481481,176 Z M103.407407,176 L192,88.1478992 L103.407407,-2.27373675e-13 L91.2592593,12.1277311 L167.407407,88.1478992 L91.2592593,163.576471 L103.407407,176 Z"
+          id="Shape"></path>
+      </g>
+      <g id=",,m" opacity="0.398210071" transform="translate(365.000000, 721.000000)" fill="#2E218E" fill-rule="nonzero">
+        <path d="M0,107 L11.0387097,107 L11.0387097,0 L0,0 L0,107 Z M47.9612903,107 L59,107 L59,0 L47.9612903,0 L47.9612903,107 Z" id="Shape"></path>
+      </g>
+      <g id="q" opacity="0.398210071" transform="translate(1018.000000, 752.000000)" fill="#2E218E" fill-rule="nonzero">
+        <path
+          d="M56,0 C25.1301939,0 0,25.1301939 0,56 C0,86.8698061 25.1301939,112 56,112 C86.8698061,112 112,86.8698061 112,56 C112,25.1301939 86.8698061,0 56,0 Z M56,102.847645 C30.0941828,102.847645 9.15235457,81.9058172 9.15235457,56 C9.15235457,30.0941828 30.0941828,9.15235457 56,9.15235457 C81.9058172,9.15235457 102.847645,30.0941828 102.847645,56 C102.847645,81.9058172 81.9058172,102.847645 56,102.847645 Z"
+          id="Shape"></path>
+      </g>
+      <g id="q-copy" opacity="0.398210071" transform="translate(10.000000, 0.000000)" fill="#2E218E" fill-rule="nonzero">
+        <path
+          d="M91,0 C40.8365651,0 0,40.8365651 0,91 C0,141.163435 40.8365651,182 91,182 C141.163435,182 182,141.163435 182,91 C182,40.8365651 141.163435,0 91,0 Z M91,167.127424 C48.9030471,167.127424 14.8725762,133.096953 14.8725762,91 C14.8725762,48.9030471 48.9030471,14.8725762 91,14.8725762 C133.096953,14.8725762 167.127424,48.9030471 167.127424,91 C167.127424,133.096953 133.096953,167.127424 91,167.127424 Z"
+          id="Shape"></path>
+      </g>
+      <g id="43k" opacity="0.398210071" transform="translate(186.000000, 273.000000)" fill="#2E218E" fill-rule="nonzero">
+        <polygon id="Path" points="174.322314 61 178 47.2258065 3.67768595 0 0 13.7741935"></polygon>
+      </g>
+      <g id=",,çw-copy" transform="translate(1259.000000, 527.000000)" fill="#2E218E" fill-rule="nonzero" opacity="0.4">
+        <path d="M0,0 C0,95.0526316 76.9473684,172 172,172 L172,157.944598 C84.8088643,157.944598 14.0554017,87.1911357 14.0554017,0 L0,0 Z" id="Path"></path>
+      </g>
+      <g id=",,,a" transform="translate(1055.350000, 257.600000)" fill="#2E218E" fill-rule="nonzero" opacity="0.4">
+        <polygon id="Path" points="7.65 100.8 63.3 4.2 55.8 0 0 96.45"></polygon>
+      </g>
+    </g>
+  </g>
+</svg>

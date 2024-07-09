@@ -1,0 +1,18 @@
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg width="100%" height="100%" viewBox="0 0 518 146" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M515.836 11.115C495.858 8.61064 476.081 16.7339 463.445 26.7481C457.452 31.4928 452.507 36.6948 447.646 41.9342C442.252 47.7507 436.941 53.6097 430.432 58.9428C418.046 69.0786 398.818 77.5522 378.69 75.6363C346.027 72.53 328.164 44.5353 295.134 44.8939C279.718 45.0623 266.5 51.7281 255.979 58.8076C245.474 65.8871 235.868 73.9262 222.2 78.3974C203.071 84.6473 179.466 82.6222 159.639 77.3027C139.813 71.9842 122.424 63.7009 103.575 57.1308C72.0024 46.1258 36.1112 40.3125 0.0101828 39.7189V146H518V11.4684C517.284 11.3499 516.585 11.2075 515.836 11.115Z" fill="#E6E6EA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M159.56 78.1908C179.379 83.4782 202.974 85.491 222.094 79.2789C235.756 74.8347 245.358 66.8443 255.858 59.8076C266.375 52.7709 279.588 46.1454 294.997 45.978C328.013 45.6216 345.868 73.447 378.517 76.5345C398.636 78.4388 417.856 70.0165 430.237 59.9419C436.743 54.6411 442.052 48.8175 447.443 43.0363C427.391 43.6077 407.339 44.2256 389.949 38.4691C372.676 32.7426 361.327 21.5759 344.104 15.7884C313.169 5.39872 275.328 15.31 244.509 25.831C226.088 32.1206 205.542 38.8742 185.137 35.7733C162.054 32.2642 148.529 17.6649 129.307 8.95944C92.5043 -7.70854 37.2254 0.382107 5.76769 20.8671L5.70778 20.9063C1.94364 23.3614 0 26.515 0 29.7347V40.8343C36.0855 41.4243 71.9613 47.2025 103.52 58.1409C122.361 64.6713 139.742 72.9045 159.56 78.1908Z" fill="#CDCDD2"/>
+</svg>

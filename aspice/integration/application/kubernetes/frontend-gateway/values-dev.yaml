@@ -1,0 +1,134 @@
+# (c) 2022 CARIAD SE, All rights reserved.
+#
+# NOTICE:
+# All the information and materials contained herein, including the intellectual and technical concepts, are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+# The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials that are confidential and/or proprietary and trade secrets of CARIAD SE.
+# Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+# The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its contents or to manufacture, use or sell anything that it may describe in whole or in part.
+#
+# Default values for frontend-aggregator.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: dlcmdevsharedacrregistry.azurecr.io/dlcm/frontend-gateway
+  tag: develop
+  pullPolicy: Always
+  imagePullSecrets:
+    - name: regcred
+
+
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+# readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 8080
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app: frontend-gateway-service
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "750m"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
+    #nginx.ingress.kubernetes.io/rewrite-target: /$1
+    #kubernetes.io/tls-acme: "true"
+  selector:
+    app: frontend-gateway-service
+  hosts:
+    - host:
+      paths:
+        - path: /(.*)
+          pathType: ImplementationSpecific
+  tls: []
+
+env:
+  OPENIDP_CLIENT_ID_ENV:
+  OPENIDP_CLIENT_SECRET_ENV:
+  OPENIDP_REDIRECT_URI_ENV: https://prelive.dlcm.live/login/oauth2/code/idp
+  OPENIDP_ISSUER_URI_ENV: https://idp.cloud.vwgroup.com/auth/realms/kums-mfa
+  SPRING_PROFILES_ACTIVE_ENV: azure
+  AZURE_AD_CLIENT_SECRET_ENV:
+  AZURE_AD_CLIENT_ID_ENV:
+  AZURE-AD-ISSUER-URI_ENV: https://login.microsoftonline.com/16f5c819-3e97-4703-80d6-9bee8050ea64/v2.0
+  AZURE_AD_LOGOUT_REDIRECT_URI_ENV:
+
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+  limits:
+    memory: 1024Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+secrets:
+  enabled: true
+  kvName: null #replaced during deployment
+  tenantId: null #replaced during deployment
+  userAssignedIdentityID: null #replaced during deployment
+  objects:
+    - kvObjectName: MysqlFlexContainerManagementPrivilegedDatabaseUserPassword
+      alias: spring.datasource.password
+    - kvObjectName: MysqlFlexContainerManagementPrivilegedDatabaseUser
+      alias: spring.datasource.username
+    - kvObjectName: CloudIdpClientID
+      alias: spring.security.oauth2.client.registration.idp.client-id
+    - kvObjectName: CloudIDPClientSecret
+      alias: spring.security.oauth2.client.registration.idp.client-secret
+    - kvObjectName: keycloakClientSecret
+      alias: spring.security.oauth2.client.registration.control-center.client-secret
+
