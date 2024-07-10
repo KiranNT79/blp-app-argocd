@@ -16,8 +16,8 @@ image:
   tag: latest
   pullPolicy: Always
 
-  imagePullSecrets:
-    - name: regcred
+imagePullSecrets:
+  - name: acr-creds
 
 env:
   SPRING_PROFILES_ACTIVE: azure
