@@ -1,0 +1,18 @@
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg id="Ebene_4" data-name="Ebene 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 70">
+    <path d="M49.3,35.17a1,1,0,0,0,0-.17,1,1,0,0,0,0-.17.37.37,0,0,0,0-.15,1.06,1.06,0,0,0-.06-.19v0a.6.6,0,0,0-.09-.13,1.19,1.19,0,0,0-.09-.15l-4.5-5.31a1.25,1.25,0,0,0-1.91,1.61l2.76,3.26H36.85a1.25,1.25,0,1,0,0,2.5h8.52l-2.76,3.26a1.25,1.25,0,1,0,1.91,1.61L49,35.81a1.19,1.19,0,0,0,.09-.15.6.6,0,0,0,.09-.13v0a1.06,1.06,0,0,0,.06-.19A.37.37,0,0,0,49.3,35.17Z"/>
+    <path d="M36.85,44.55H33.7a3,3,0,0,1-2.94-2.95V28.4a3,3,0,0,1,2.94-2.95h3.15a1.25,1.25,0,0,0,0-2.5H33.7a5.45,5.45,0,0,0-5.44,5.45V41.6a5.45,5.45,0,0,0,5.44,5.45h3.15a1.25,1.25,0,1,0,0-2.5Z"/>
+</svg>

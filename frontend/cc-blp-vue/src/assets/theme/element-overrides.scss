@@ -1,0 +1,579 @@
+/*!
+ * (c) 2022 CARIAD SE, All rights reserved.
+ *
+ * NOTICE:
+ * All the information and materials contained herein, including the intellectual and technical concepts,
+ * are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+ * The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+ * that are confidential and/or proprietary and trade secrets of CARIAD SE.
+ * Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+ * information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+ * The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+ * contents or to manufacture, use or sell anything that it may describe in whole or in part.
+ */
+
+@use '@/assets/theme/colors';
+@use '@/assets/theme/variables';
+@use '@/assets/theme/mixins';
+
+#cc-app {
+  .el-tag {
+    line-height: 8px;
+  }
+
+  .el-select__tags .el-tag {
+    margin: 4px 8px 4px 0;
+  }
+
+  .el-select .el-select-tags-wrapper,
+  .el-select .el-select-tags-wrapper.has-prefix {
+    margin-left: 10px;
+  }
+
+  .el-form-item {
+    margin-bottom: 48px;
+  }
+
+  .el-form-item__error {
+    padding-top: 8px;
+    font-size: 14px;
+
+    &:before {
+      margin-right: 8px;
+      content: url("data:image/svg+xml,%3Csvg width='14px' height='14px' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' data-v-ea893728=''%3E%3Cpath fill='%23f80556' d='M512 64a448 448 0 1 1 0 896 448 448 0 0 1 0-896zm0 832a384 384 0 0 0 0-768 384 384 0 0 0 0 768zm48-176a48 48 0 1 1-96 0 48 48 0 0 1 96 0zm-48-464a32 32 0 0 1 32 32v288a32 32 0 0 1-64 0V288a32 32 0 0 1 32-32z'%3E%3C/path%3E%3C/svg%3E");
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  .el-input-number__increase,
+  .el-input-number__decrease {
+    width: 56px;
+
+    .el-icon {
+      font-size: 24px;
+    }
+  }
+
+  .el-radio .el-radio__label {
+    padding-left: 12px;
+  }
+
+  .el-radio__inner::after {
+    width: 7px;
+    height: 7px;
+  }
+
+  .el-checkbox-group {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+
+    &.horizontal {
+      flex-flow: row;
+    }
+  }
+
+  .el-checkbox__inner {
+    top: -2px;
+
+    &::after {
+      left: 7px;
+      top: 3px;
+      border-width: 2.2px;
+    }
+  }
+
+  .el-input__wrapper {
+    padding: 1px 16px;
+  }
+
+  .el-textarea__inner {
+    padding: 8px 16px;
+  }
+
+  .el-form .readonly {
+    .el-input__wrapper,
+    .el-textarea__inner {
+      box-shadow: 0 0 0 1px colors.$bg-content-gray inset;
+      background-color: colors.$bg-content-gray;
+
+      &,
+      .el-input__inner {
+        color: colors.$neutral-black;
+      }
+    }
+  }
+
+  .el-checkbox.readonly {
+    .el-checkbox__label {
+      color: colors.$new-grey;
+    }
+
+    .el-checkbox__inner {
+      background-color: colors.$grey-fill-color;
+      color: colors.$grey-fill-color;
+    }
+
+    &.is-checked {
+      .el-checkbox__inner:hover,
+      .el-checkbox__inner {
+        background-color: colors.$accent-200;
+        border: var(--el-border-width) var(--el-border-style) colors.$accent-200;
+      }
+
+      .el-checkbox__label {
+        color: colors.$neutral-black;
+      }
+    }
+  }
+
+  .el-switch.is-checked.readonly .el-switch__core {
+    background-color: colors.$accent-200;
+    border-color: colors.$accent-200;
+  }
+
+  .el-form-item__content .el-date-editor .el-input__wrapper {
+    width: 100%;
+  }
+
+  .info-box {
+    background-color: colors.$bg-card-background;
+    cursor: default;
+
+    .el-card__body {
+      padding: 8px 11px;
+    }
+  }
+
+  .warning-box {
+    background-color: colors.$in-progress;
+    color: colors.$in-progress-text;
+  }
+
+  .success-box {
+    background-color: colors.$positive;
+    color: colors.$positive-text;
+  }
+
+  .el-form .el-form-item .el-form-item__content {
+    max-width: 600px;
+
+    .el-card,
+    .el-date-editor,
+    .el-select {
+      width: 100%;
+    }
+
+    .el-card {
+      line-height: normal;
+    }
+
+    & > *,
+    .el-space--vertical > .el-space__item,
+    .el-space--vertical > .el-space__item > *,
+    .el-date-editor.el-input,
+    .el-date-editor.el-input__inner {
+      width: 100%;
+    }
+
+    .el-radio-group {
+      gap: 16px 44px;
+
+      .el-radio.is-bordered {
+        margin: 0;
+      }
+    }
+  }
+
+  .el-tabs__header .el-badge.error .el-badge__content {
+    background-color: colors.$error;
+    top: 10px;
+    right: 0;
+  }
+
+  .el-checkbox {
+    height: auto;
+    margin-top: 4px;
+    display: flex;
+
+    .el-checkbox__label {
+      padding-left: 12px;
+      white-space: normal;
+      line-height: 1.15em;
+      margin-top: -2px;
+    }
+
+    &.readonly {
+      cursor: default;
+
+      .el-checkbox__inner {
+        cursor: no-drop;
+
+        &:hover {
+          border: var(--el-checkbox-input-border);
+        }
+      }
+    }
+
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner::before {
+      top: 7px;
+    }
+  }
+
+  .el-switch.readonly .el-switch__core {
+    cursor: no-drop;
+  }
+
+  .el-tabs__content {
+    /* get rid of shadow clipping by overflow: hidden */
+    padding: 10px;
+    margin: -10px;
+  }
+
+  .form-item-readonly {
+    margin-bottom: 24px;
+
+    .ro-content {
+      display: flex;
+      font-size: 16px;
+      color: colors.$neutral-700;
+      margin-top: -4px;
+      word-break: break-all;
+      white-space: pre-wrap;
+      max-height: 320px;
+      overflow-y: auto;
+      width: 100%;
+
+      &::after {
+        content: '\200b';
+      }
+    }
+  }
+
+  input.el-input__inner[readonly='readonly']:not(.el-select *, .el-date-editor--week *),
+  input.el-input__inner[type='text']:read-only:not(.el-select *, .el-date-editor--week *),
+  input.el-input__inner[readonly]:not(.el-select *, .el-date-editor--week *),
+  textarea.el-textarea__inner[readonly='readonly'],
+  textarea.el-textarea__inner[type='text']:read-only,
+  textarea.el-textarea__inner[readonly] {
+    cursor: no-drop;
+  }
+
+  .el-drawer__body {
+    overflow-x: hidden;
+  }
+
+  input.el-input__inner[disabled]:not(.el-select *) {
+    -webkit-text-fill-color: colors.$text-disabled; /* required on iOS */
+  }
+
+  .el-form-item__content > .align-horizontal > .el-form-item__error.gray {
+    margin-left: 0;
+
+    &::before {
+      margin-right: 0;
+      content: '';
+    }
+  }
+
+  .el-dropdown-menu__item,
+  .el-tabs__item {
+    font-family: variables.$dlcm-font-regular;
+    font-weight: normal;
+    color: colors.$neutral-700;
+  }
+
+  .el-tabs__item:focus-visible {
+    background-color: colors.$neutral-100;
+    box-shadow: none;
+  }
+
+  .el-select-dropdown__item {
+    @extend .regular;
+    margin: 0 8px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    height: 44px;
+
+    &.selected {
+      font-weight: normal;
+    }
+
+    &:hover {
+      color: colors.$accent-100;
+    }
+  }
+
+  .el-form--default.el-form--label-top .el-form-item .el-form-item__label {
+    @extend .regular;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+    margin-bottom: 8px;
+    max-width: 600px;
+  }
+}
+
+.el-message-box {
+  padding-bottom: 8px;
+
+  .el-message-box__header {
+    padding-bottom: 0;
+  }
+
+  .el-message-box__headerbtn {
+    top: 8px;
+    right: 8px;
+
+    .el-message-box__close {
+      color: colors.$black;
+    }
+  }
+  .el-message-box__title {
+    @extend .hl3;
+    @extend .medium;
+
+    padding: 8px 8px 0 8px;
+  }
+
+  .el-message-box__message {
+    border-bottom: 1px solid colors.$neutral-100;
+    margin-bottom: 8px;
+    padding: 0 8px 24px 8px;
+  }
+
+  .el-button {
+    @extend .regular;
+    border-radius: 100px;
+    padding: 0 24px;
+    height: 40px;
+    color: colors.$accent-050;
+    background-color: colors.$neutral-white;
+    border: 2px solid colors.$accent-050;
+    transition: all 0.8s;
+
+    &:focus-visible {
+      outline: 2px solid colors.$accent-100;
+      outline-offset: 3px;
+      transition: all 0.1s;
+    }
+
+    &.el-button--primary {
+      color: colors.$neutral-white;
+      background-color: colors.$accent-050;
+      border: transparent;
+
+      &:hover {
+        background-color: colors.$accent-100;
+      }
+      &:active {
+        background-color: colors.$accent-200;
+      }
+      &:focus-visible {
+        background-color: colors.$accent-100;
+      }
+    }
+  }
+
+  .el-message-box__btns {
+    margin-bottom: 16px;
+    margin-right: 8px;
+
+    button:nth-child(2) {
+      margin-left: 16px;
+    }
+  }
+}
+
+.el-message {
+  padding: 16px;
+  @include mixins.rounded();
+  border: none;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  background-color: colors.$neutral-white;
+  color: colors.$neutral-black;
+
+  .el-message__icon {
+    margin-right: 12px;
+    font-size: 24px;
+  }
+
+  .el-message__closeBtn {
+    top: 8px;
+    right: 8px;
+    transform: unset;
+  }
+
+  .el-message__content {
+    padding-right: 24px;
+  }
+
+  &.el-message--info {
+    .el-message__content {
+      color: colors.$neutral-black;
+    }
+  }
+
+  &.el-message--error {
+    border-left: 4px solid colors.$error;
+
+    .el-message__content {
+      color: colors.$neutral-black;
+    }
+
+    .el-message-icon--error {
+      color: colors.$error;
+    }
+  }
+
+  &.el-message--success {
+    border-left: 4px solid colors.$success;
+
+    .el-message__content {
+      color: colors.$neutral-black;
+    }
+
+    .el-message-icon--success {
+      color: colors.$success;
+    }
+  }
+
+  &.el-message--warning {
+    border-left: 4px solid colors.$warning;
+
+    .el-message__content {
+      color: colors.$neutral-black;
+    }
+
+    .el-message-icon--warning {
+      color: colors.$warning;
+    }
+  }
+}
+
+.el-popover.el-popper {
+  word-break: normal;
+  text-align: left;
+
+  a,
+  b,
+  > div > p,
+  > div > * > li {
+    font-size: 14px;
+  }
+}
+
+.el-popper.is-dark,
+.el-popper.is-light {
+  border-radius: 2px;
+  font-family: variables.$dlcm-font-regular;
+  font-weight: normal;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.el-popper.is-dark,
+.el-popper.is-dark .el-popper__arrow::before {
+  background-color: colors.$accent-200;
+}
+
+.el-popper.is-light {
+  color: colors.$text-regular;
+}
+
+.el-form-item__content > p.hint,
+.el-radio-group p.hint {
+  @extend .small;
+  @extend .light;
+  color: colors.$neutral-700;
+  margin-top: -4px;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.el-date-table td {
+  &.in-range {
+    &:not(.start-date):not(.end-date) .el-date-table-cell:hover {
+      background-color: colors.$blue-100;
+      .el-date-table-cell__text {
+        background-color: var(--el-datepicker-inrange-hover-bg-color);
+        border-radius: 50%;
+      }
+    }
+
+    &.start-date,
+    &.end-date {
+      .el-date-table-cell:hover {
+        background-color: var(--el-datepicker-inrange-bg-color) !important;
+      }
+    }
+  }
+
+  &.available:hover:not(.in-range):not(.current) .el-date-table-cell__text {
+    background-color: colors.$neutral-050;
+    border-radius: 50%;
+  }
+}
+
+.el-select-group__wrap {
+  padding: 0 8px 8px 8px !important;
+
+  .el-select-group__title {
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 7px;
+    margin-left: 6px;
+  }
+
+  .el-select-group {
+    .el-select-dropdown__item {
+      font-size: 16px;
+      font-weight: 500;
+      height: 44px;
+      line-height: 44px;
+    }
+
+    &.selected {
+      background-color: #e7e4fb;
+      color: #442ee0;
+    }
+
+    .hover,
+    :hover {
+      background-color: #e7e4fb;
+      border-radius: 6px;
+      color: #442ee0;
+    }
+  }
+}
+
+.el-select-group__wrap:not(:last-of-type)::after {
+  height: 0 !important;
+}
+
+.el-popper {
+  border-radius: 8px !important;
+}
+
+.file-list-button svg {
+  color: colors.$grey-700;
+  width: 16px;
+}
+.file-list-button:hover svg {
+  color: colors.$blue-700;
+}
+
+.link-list-button svg,
+.file-list-button svg {
+  color: colors.$grey-700;
+  width: 16px;
+}
+
+.link-list-button:hover svg path,
+.file-list-button:hover svg {
+  color: colors.$blue-700;
+}

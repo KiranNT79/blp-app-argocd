@@ -1,0 +1,136 @@
+# (c) 2022 CARIAD SE, All rights reserved.
+#
+# NOTICE:
+# All the information and materials contained herein, including the intellectual and technical concepts, are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+# The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials that are confidential and/or proprietary and trade secrets of CARIAD SE.
+# Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+# The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its contents or to manufacture, use or sell anything that it may describe in whole or in part.
+
+parameters:
+  - name: stage
+    type: string
+    displayName: 'Stage'
+    values:
+      - 'dev'
+      - 'itsec'
+      - 'approval'
+      - 'prelive'
+      - 'live'
+      - 'axolotls'
+      - 'chipmunks'
+      - 'dragons'
+      - 'goats'
+      - 'tigers'
+      - 'panthers'
+      - 'greyhounds'
+      - 'cheetahs'
+    default: 'dev'
+  - name: environment
+    type: string
+    displayName: 'Environment'
+    default: 'gitc'
+    values:
+      - 'gitc'
+      - 'nar'
+
+variables:
+  - name: teamNamespaces
+    value: axolotls, chipmunks, dragons, goats, panthers, tigers, greyhounds
+  - name: ServiceConnection
+    ${{ if and(eq(parameters.stage, 'itsec') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Dev-Gitc
+    ${{ if and(eq(parameters.stage, 'dev') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Dev-Gitc
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Dev-Gitc
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Qa
+    ${{ if and(eq(parameters.stage, 'approval') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Qa
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Live
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'nar')) }}:
+      value: DLCM NAR-Preprod
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'nar')) }}:
+      value: DLCM NAR-Prod
+  - name: AgentPool
+    ${{ if eq(parameters.environment, 'gitc') }}:
+      value: 'DLCM-${{ parameters.stage }}-Pool'
+    ${{ if eq(parameters.environment, 'nar') }}:
+      value: 'DLCM-${{ parameters.stage }}-Pool-NAR'
+  - name: AzureSubscription
+    ${{ if and(eq(parameters.stage, 'itsec') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Dev-Gitc
+    ${{ if and(eq(parameters.stage, 'dev') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Dev-Gitc
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Dev-Gitc
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Qa
+    ${{ if and(eq(parameters.stage, 'approval') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Qa
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM EU-Live
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'nar')) }}:
+      value: DLCM NAR-Preprod
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'nar')) }}:
+      value: DLCM NAR-Prod
+  - name: KeyvaultName
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: 'dlcm-dev-kv'
+    ${{ if and(not(contains(variables.teamNamespaces, parameters['stage'])),eq(parameters.environment, 'gitc')) }}:
+      value: 'dlcm-${{ parameters.stage }}-kv'
+    ${{ if eq(parameters.environment, 'nar') }}:
+      value: 'dlcm-nar-${{ parameters.stage }}-kv'
+  - name: AksEnvironmentName
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: 'dlcm-dev-aks-env'
+    ${{ if and(not(contains(variables.teamNamespaces, parameters['stage'])),eq(parameters.environment, 'gitc')) }}:
+      value: 'dlcm-${{ parameters.stage }}-aks-env'
+    ${{ if eq(parameters.environment, 'nar') }}:
+      value: 'dlcm-${{ parameters.stage }}-aks-env-nar'
+  - name: KeycloakIssuerUriEnv
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: 'https://${{ parameters.stage }}.dev.dlcm.vwgroup.com/auth/realms/cc'
+    ${{ if and(and(ne(parameters.stage, 'live'), eq(parameters.environment, 'gitc')),not(contains(variables.teamNamespaces, parameters['stage']))) }}:
+      value: 'https://${{ parameters.stage }}.dlcm.vwgroup.com/auth/realms/cc'
+    ${{ if and(eq(parameters.stage, 'live'), eq(parameters.environment, 'gitc')) }}:
+      value: 'https://dlcm.vwgroup.com/auth/realms/cc'
+    ${{ if and(ne(parameters.stage, 'live'), eq(parameters.environment, 'nar')) }}:
+      value: 'https://${{ parameters.stage }}.na.dlcm.vwgroup.com/auth/realms/cc'
+    ${{ if and(eq(parameters.stage, 'live'), eq(parameters.environment, 'nar')) }}:
+      value: 'https://na.dlcm.vwgroup.com/auth/realms/cc'
+  - name: RegistryServiceConnectionName
+    ${{ if and(eq(parameters.stage, 'itsec') , eq(parameters.environment, 'gitc')) }}:
+      value: Dlcm-itsec-acr
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: Dlcm-dev-acr
+    ${{ if and(eq(parameters.stage, 'dev') , eq(parameters.environment, 'gitc')) }}:
+      value: Dlcm-dev-acr
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM-prelive-acr
+    ${{ if and(eq(parameters.stage, 'approval') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM-approval-acr
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'gitc')) }}:
+      value: DLCM-live-acr
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'nar')) }}:
+      value: DLCM-prelive-acr-nar
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'nar')) }}:
+      value: DLCM-live-acr-nar
+  - name: RegistryLoginServer
+    ${{ if and(eq(parameters.stage, 'itsec') , eq(parameters.environment, 'gitc')) }}:
+      value: dlcmitsecsharedacrregistry.azurecr.io
+    ${{ if and(eq(parameters.stage, 'dev') , eq(parameters.environment, 'gitc')) }}:
+      value: dlcmdevsharedacrregistry.azurecr.io
+    ${{ if and(contains(variables.teamNamespaces, parameters['stage']) , eq(parameters.environment, 'gitc')) }}:
+      value: dlcmdevsharedacrregistry.azurecr.io
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'gitc')) }}:
+      value: dlcmprelivesharedacrregistry.azurecr.io
+    ${{ if and(eq(parameters.stage, 'approval') , eq(parameters.environment, 'gitc')) }}:
+      value: dlcmapprovalsharedacrregistry.azurecr.io
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'gitc')) }}:
+      value: dlcmlivesharedacrregistry.azurecr.io
+    ${{ if and(eq(parameters.stage, 'prelive') , eq(parameters.environment, 'nar')) }}:
+      value: dlcmprelivesharedeastusacrregistry.azurecr.io
+    ${{ if and(eq(parameters.stage, 'live') , eq(parameters.environment, 'nar')) }}:
+      value: dlcmlivesharedeastusacrregistry.azurecr.io

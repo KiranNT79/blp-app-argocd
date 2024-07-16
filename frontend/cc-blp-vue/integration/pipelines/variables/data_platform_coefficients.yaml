@@ -1,0 +1,37 @@
+# (c) 2022 CARIAD SE, All rights reserved.
+#
+# NOTICE:
+# All the information and materials contained herein, including the intellectual and technical concepts, are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+# The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials that are confidential and/or proprietary and trade secrets of CARIAD SE.
+# Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+# The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its contents or to manufacture, use or sell anything that it may describe in whole or in part.
+
+variables:
+  - name: ecu
+    value: '0.00002562\,0.00001909\,0.0'
+  - name: oru23
+    value: '0.000023148148148148\,0.000015431712962963\,0.0'
+  - name: oruMebOru4
+    value: '0.0000181015347142613\,0.0000256200000000000\,0.0000226244737431856\,0.0000222484590492664\,0.0000226081395056719\,0.0000187297378930765\,0.0000164830112964038\,0.0000165956087170244'
+  - name: oruNext
+    value: '0.00002562\,0.00001909\,0.0'
+  - name: webApp
+    value: '0.00000903\,0.00000361\,0.0'
+  - name: autoEdgeContainer
+    value: '0.00000903\,0.00000361\,0.0'
+  - name: maps
+    value: '0.000008796296296\,0.00000474537037\,0.0'
+  - name: oiNavDb
+    value: '0.000008796296296\,0.00000474537037\,0.0'
+  - name: mib2
+    value: '0.000008796296296\,0.00000474537037\,0.0'
+  - name: mib2plus
+    value: '0.000008796296296\,0.00000474537037\,0.0'
+  - name: mib3ti
+    value: '0.000008796296296\,0.00000474537037\,0.0'
+  - name: oruMebUnece
+    value: '0.0000181015347142613\,0.0000256200000000000\,0.0000226244737431856\,0.0000222484590492664\,0.0000226081395056719\,0.0000187297378930765\,0.0000164830112964038\,0.0000165956087170244'
+  - name: cariadMap
+    value: '0.000008796296296\,0.00000474537037\,0.0'
+  - name: other
+    value: '0.00002562\,0.00001909\,0.0'

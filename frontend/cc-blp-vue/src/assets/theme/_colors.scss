@@ -1,0 +1,121 @@
+/*!
+ * (c) 2022 CARIAD SE, All rights reserved.
+ *
+ * NOTICE:
+ * All the information and materials contained herein, including the intellectual and technical concepts,
+ * are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+ * The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+ * that are confidential and/or proprietary and trade secrets of CARIAD SE.
+ * Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+ * information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+ * The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+ * contents or to manufacture, use or sell anything that it may describe in whole or in part.
+ */
+
+// Latest UI approved colors:
+
+// Primary colors
+// are the most prominent colors in the interface, often found on buttons and in body text.
+$accent-050: #442ee0; // Blue 500
+$neutral-black: #000; // Black
+$neutral-700: #494955; // Gray 700
+$neutral-025: #f9f9fa; // Gray 25
+$neutral-white: #fff; // White
+
+// Secondary Colors
+// are used to complement and balance your designs. They can be found in places such as button hover states and to communicate the mood of the brand.
+$accent-200: #1d0738; // Blue 900
+$accent-100: #2e218e; // Blue 700
+$secondary-001: #00fa9a; // Secondary Green
+$secondary-003: #fff049; // Secondary Yellow
+$secondary-002: #ee4c40; // Secondary Red
+
+// Neutral colors
+// which range from black to white, are commonly used in text, borders, and backgrounds. It's important to keep in mind the WCAG 2.0 standards when using them.
+$gray-900: #1a1a1e; // Gray 900
+$night-mode-gray: #373741; // Gray 800
+$neutral-600: #606071; // Gray 600
+$neutral-500: #78788c; // Gray 500
+$neutral-400: #9494a4; // Gray 400
+$neutral-300: #afafbb; // Gray 300
+$neutral-200: #cdcdd2; // Gray 200
+$neutral-100: #e6e6ea; // Gray 100
+$neutral-050: #f4f4f6; // Gray 50
+
+$grey-025: $neutral-025;
+$grey-400: $neutral-400;
+$grey-700: $neutral-700;
+
+// Blue Shades
+// In order to achieve a better hierarchy of information and interaction, a palette of shades of blue was created. This group includes all the fundamental colors and interaction states, such as hover.
+$blue-900: $accent-200; // Blue 900
+$blue-800: #170e5d; // Blue 800
+$blue-700: $accent-100; // Blue 700
+$blue-600: #4232b8; // Blue 600
+$blue-500: $accent-050; // Blue 400
+$blue-400: #8881e5; // Blue 400
+$blue-300: #aca2f1; // Blue 300
+$blue-200: #d8d3f8; // Blue 200
+$blue-100: #e7e4fb; // Blue 100
+$blue-50: #f0eff9; // Blue 50
+
+// Semantic colors
+// give meaning and feedback based on their function, communicating specific states to the user.
+$success: #008833;
+$warning: #faa000;
+$error: #f80556;
+$unread: #7e24ff;
+
+$error-accent-050: #af043d;
+$error-accent-200: #7d032b;
+
+// Status
+$positive: #d0fae0;
+$alert: #fceccf;
+$in-progress: $alert; // Alert
+$negative: #fddde8;
+$action-required: #e7e4fb;
+
+// -- old variables below --
+
+$positive-text: #003d17;
+$negative-text: #f80655;
+$alert-text: #613e00;
+$in-progress-text: $alert-text;
+$action-required-text: $accent-100;
+
+$dropdown-shadow:
+  0 0 1px 0 rgba(0, 0, 0, 0.12),
+  0 1px 20px 0 rgba(90, 20, 255, 0.2);
+
+$midnight: #1d0638;
+$midnight-hover: #2b015b;
+$purple: #9900ff;
+$sunlight: #fef049;
+$blue-sky: #32d5f5;
+$day-mode-gray: #cdcdd2;
+$plum-velvet: #7d0552;
+$ugly-green: #9ee374;
+$black: $neutral-black;
+$cariad-blue: #432ee0;
+
+$text-regular: $gray-900;
+$text-primary: #303133;
+$text-secondary: #909399;
+$text-placeholder: #a8abb2;
+$text-disabled: #c0c4cc;
+$text-light: $neutral-white;
+$grey-text-color: #99999a;
+$grey-text-color-darker: $neutral-600;
+$new-grey: #989898;
+$grey-border-color: $neutral-100; // var(--el-border-color);
+$grey-fill-color: #cdcdcd;
+$grey-fill-color-light: #e6e6e6;
+$bg-content-light: $neutral-white;
+$bg-content-gray: #f5f7fa;
+$bg-card-background: #fffdeb;
+$bg-sidebar: $neutral-025;
+$future-green-light: #a3efbb;
+$dark-green: #006400;
+$detail-grey: #8492a6;
+$bg-light-blue: #f5f4fd;

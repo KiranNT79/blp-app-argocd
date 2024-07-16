@@ -1,0 +1,21 @@
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg id="Ebene_4" data-name="Ebene 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 70">
+    <polygon points="44.28 46.25 44.28 46.25 44.28 46.25 44.28 46.25"/>
+    <polygon points="53.35 38.2 53.34 38.2 53.34 38.2 53.35 38.2"/>
+    <polygon points="28.75 22.91 28.75 22.91 28.75 22.91 28.75 22.91"/>
+    <path d="M54.79,33.51h0a1.72,1.72,0,0,0-1.29-1.67l-.19,0L51,31.58l-.25-.71h0c-.14-.38-.29-.75-.46-1.11L50,29.15l1.41-2.07h0a1.72,1.72,0,0,0,.31-1,1.77,1.77,0,0,0-.52-1.25h0l-2-2h0a1.73,1.73,0,0,0-.68-.42,1.56,1.56,0,0,0-.55-.09,1.77,1.77,0,0,0-.58.1,1.59,1.59,0,0,0-.45.24h0l-2,1.38-.62-.3a11.28,11.28,0,0,0-1.2-.5h0L42.47,23l-.4-2.34h0a1.72,1.72,0,0,0-.61-1.05,1.8,1.8,0,0,0-1.13-.39H37.48a1.74,1.74,0,0,0-1.68,1.29l0,.16-.29,2.4-.69.24h0a11.2,11.2,0,0,0-1.13.47h0l-.6.28-2-1.35h0a1.8,1.8,0,0,0-1-.31,1.77,1.77,0,0,0-.55.08,1.87,1.87,0,0,0-.72.42l-2,1.95,0,0a1.73,1.73,0,0,0-.17,2.23h0l1.39,2-.28.61h0c-.19.4-.34.79-.48,1.16h0l-.24.64-2.28.38h0a1.7,1.7,0,0,0-1,.63,1.72,1.72,0,0,0-.38,1.11h0v2.83h0a1.69,1.69,0,0,0,.42,1.13,1.77,1.77,0,0,0,1,.57h0l2.42.46.23.63h0c.14.38.29.75.46,1.1h0l.3.63L26.68,43h0a1.8,1.8,0,0,0-.32,1,1.82,1.82,0,0,0,.53,1.26h0l1.94,2,0,0a1.81,1.81,0,0,0,.68.4,1.76,1.76,0,0,0,.53.09,1.83,1.83,0,0,0,1-.32h0l2-1.37.61.28h0c.37.17.72.3,1.08.43l.64.24.38,2.32v0a1.72,1.72,0,0,0,.63,1,1.79,1.79,0,0,0,1.12.38h3a1.76,1.76,0,0,0,1-.33,1.79,1.79,0,0,0,.37-.36,1.49,1.49,0,0,0,.28-.62v-.07l.33-2.45.69-.23h0a11.46,11.46,0,0,0,1.09-.46l.64-.31,2,1.46h0a1.67,1.67,0,0,0,1,.32,1.76,1.76,0,0,0,.58-.1,1.82,1.82,0,0,0,.67-.43h0l2-2h0A1.74,1.74,0,0,0,51.71,44a1.79,1.79,0,0,0-.34-1h0L50,41l.31-.63h0a11.37,11.37,0,0,0,.45-1.09h0l.22-.68,2.38-.39a1.72,1.72,0,0,0,1.06-.61,1.75,1.75,0,0,0,.39-1.13h0V33.52ZM28.71,44.42Zm21.1-8.17a1.26,1.26,0,0,0-1,.83l-.46,1.39a6.63,6.63,0,0,1-.33.79h0l-.64,1.3a1.25,1.25,0,0,0,.11,1.28l1.46,2L47.86,45l-2.08-1.51a1.23,1.23,0,0,0-1.28-.12L43.19,44h0a7.48,7.48,0,0,1-.82.35h0l-1.4.49a1.22,1.22,0,0,0-.83,1l-.33,2.42H38.13l-.39-2.38a1.26,1.26,0,0,0-.8-1l-1.32-.49c-.37-.14-.66-.25-.91-.36l-1.25-.57a1.22,1.22,0,0,0-1.22.1L30.16,45,29.09,43.9l1.43-2a1.26,1.26,0,0,0,.12-1.27L30,39.34h0c-.14-.29-.26-.58-.37-.88l-.46-1.31a1.28,1.28,0,0,0-1-.81l-2.53-.48V34.27l2.33-.4a1.22,1.22,0,0,0,1-.79l.5-1.3h0c.13-.36.26-.69.4-1h0l.59-1.26a1.28,1.28,0,0,0-.11-1.24L28.94,26.2l1.15-1.1,2.17,1.44a1.26,1.26,0,0,0,1.23.1l1.24-.6h0c.29-.13.59-.25.89-.36l1.42-.5a1.27,1.27,0,0,0,.82-1l.3-2.42h1.56l.41,2.41a1.24,1.24,0,0,0,.8,1l1.32.48h0c.33.12.67.26,1,.41l1.27.62a1.24,1.24,0,0,0,1.26-.1l2.11-1.46L49,26.19l-1.47,2.15a1.27,1.27,0,0,0-.09,1.24l.6,1.25a7.39,7.39,0,0,1,.36.88l.52,1.46A1.28,1.28,0,0,0,50,34l2.31.22v1.63Z"/>
+    <path d="M39,28.71A6.29,6.29,0,1,0,45.29,35,6.29,6.29,0,0,0,39,28.71Zm2.68,9A3.79,3.79,0,1,1,42.79,35,3.76,3.76,0,0,1,41.68,37.68Z"/>
+</svg>

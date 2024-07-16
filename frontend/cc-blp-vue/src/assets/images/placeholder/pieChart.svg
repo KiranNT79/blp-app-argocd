@@ -1,0 +1,19 @@
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg width="100%" height="100%" viewBox="0 0 164 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M161.106 60.8466C153.989 34.4955 133.904 13.4385 108.059 4.82353L82 82L161.106 60.8466Z" fill="#AFAFBB"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M82.0829 82.0663L45.8235 155.539C56.7518 160.947 69.0587 164 82.0829 164C127.326 164 164 127.317 164 82.0663C164 74.7001 163.014 67.5676 161.192 60.7765L82.0829 82.0663Z" fill="#E6E6EA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M108.047 4.2569C99.8544 1.51028 91.0897 0 81.9718 0C36.7017 0 0 36.6623 0 81.8872C0 114.094 18.6228 141.945 45.6907 155.318L81.9718 81.8872L108.047 4.2569Z" fill="#CDCDD2"/>
+</svg>

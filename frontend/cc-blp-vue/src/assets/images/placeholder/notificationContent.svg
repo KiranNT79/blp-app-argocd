@@ -1,0 +1,27 @@
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg width="100%" height="100%" viewBox="0 0 282 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="282" height="24" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.09941 8.85562C2.09941 5.06597 5.20405 1.98701 9.02533 1.98701C12.8363 1.98701 15.9512 5.07614 15.9512 8.85562V11.7964C15.9512 12.015 16.0011 12.335 16.0957 12.677C16.1891 13.0148 16.3098 13.315 16.4196 13.5056L17.5961 15.4435C18.5253 16.9793 17.7825 18.9799 16.0708 19.5419C11.4905 21.0592 6.54863 21.0591 1.96842 19.5415L1.96556 19.5405C1.1012 19.2504 0.452977 18.6505 0.163147 17.8743C-0.127019 17.0971 -0.0283102 16.2224 0.444743 15.4427L1.6231 13.5018L1.62388 13.5005C1.73624 13.3131 1.85932 13.014 1.9543 12.6747C2.04957 12.3343 2.09941 12.0148 2.09941 11.7964V8.85562Z" fill="#AFAFBB"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.4107 2.76685C6.82056 1.72966 7.83811 1 9.02541 1C10.2127 1 11.2303 1.72966 11.6401 2.76685C11.7471 3.0376 11.6896 3.34512 11.4919 3.55988C11.2942 3.77464 10.9907 3.85931 10.7091 3.77823C10.4244 3.69628 10.1372 3.63443 9.846 3.59944L9.84315 3.59909C8.95621 3.48914 8.11816 3.5544 7.342 3.77816C7.06039 3.85935 6.75673 3.77474 6.55896 3.55998C6.36119 3.34522 6.30369 3.03765 6.4107 2.76685Z" fill="#AFAFBB"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.71674 19.1841C6.71674 19.8074 6.97819 20.3891 7.39428 20.8017C7.81037 21.2144 8.3969 21.4736 9.02538 21.4736C10.2934 21.4736 11.334 20.4416 11.334 19.1841H12.8731C12.8731 21.2846 11.1434 23 9.02538 23C7.97112 23 6.99803 22.5673 6.30598 21.881C5.61392 21.1947 5.17765 20.2296 5.17765 19.1841H6.71674Z" fill="#AFAFBB"/>
+<rect x="26" width="136" height="24" fill="#AFAFBB"/>
+<rect width="282" height="158" transform="translate(0 48)" fill="white"/>
+<rect y="48" width="282" height="18.8" fill="#CDCDD2"/>
+<rect y="82.7998" width="282" height="18.8" fill="#CDCDD2"/>
+<rect y="117.6" width="282" height="18.8" fill="#CDCDD2"/>
+<rect y="152.4" width="282" height="18.8" fill="#CDCDD2"/>
+<rect y="187.2" width="282" height="18.8" fill="#CDCDD2"/>
+</svg>

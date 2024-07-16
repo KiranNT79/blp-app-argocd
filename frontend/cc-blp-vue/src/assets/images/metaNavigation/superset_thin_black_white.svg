@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - (c) 2022 CARIAD SE, All rights reserved.
+  -
+  - NOTICE:
+  - All the information and materials contained herein, including the intellectual and technical concepts,
+  - are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+  - The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials
+  - that are confidential and/or proprietary and trade secrets of CARIAD SE.
+  - Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other
+  - information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+  - The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its
+  - contents or to manufacture, use or sell anything that it may describe in whole or in part.
+  -->
+
+<svg viewBox="0 0 78 70" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="Analytics-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-49.000000, -49.000000) scale(2 2) translate(-16 -18) ">
+            <g id="superset_thin_black" transform="translate(49.000000, 49.018797)">
+                <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z" id="Vector" opacity="0"></path>
+                <path d="M14.9784426,9.13154421 C15.8073031,8.32204136 16.7276727,8 17.8328201,8 C20.1346238,8 22,9.86713594 22,12.1689397 C22,14.4707435 20.1346238,16.3361197 17.8328201,16.3361197 C16.7294325,16.3361197 15.7193137,15.9172899 14.9819622,15.208095 C13.5512538,13.8337 10.7338319,11.0356357 9.41399032,9.55565332 C8.60448746,8.6458425 7.4799824,8 6.16717994,8 C3.86537615,8 2,9.86713594 2,12.1689397 C2,14.4707435 3.86537615,16.3361197 6.16717994,16.3361197 C7.50989881,16.3361197 8.71359437,15.6410031 9.59172899,14.7171139 C10.9291685,13.3128025 13.5899692,10.4865816 14.9784426,9.13154421 Z" id="stroke" stroke="#000000" stroke-width="1.5"></path>
+                <path d="M14.9819622,15.208095 C14.2020333,14.4906445 10.0575057,10.3389515 9.41399032,9.55565332" id="colored-stroke" stroke="#808080" stroke-width="1.5"></path>
+                <path d="M12.5495942,11.6095613 C12.1298564,12.0393821 11.7543055,12.4469449 11.4016316,12.8146505" id="center" stroke="#999999" stroke-width="1.5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

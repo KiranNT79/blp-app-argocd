@@ -1,0 +1,139 @@
+# (c) 2022 CARIAD SE, All rights reserved.
+#
+# NOTICE:
+# All the information and materials contained herein, including the intellectual and technical concepts, are the property of CARIAD SE and may be covered by patents, patents in process, and are protected by trade secret and/or copyright law.
+# The copyright notice above does not evidence any actual or intended publication or disclosure of this source code, which includes information and materials that are confidential and/or proprietary and trade secrets of CARIAD SE.
+# Any reproduction, dissemination, modification, distribution, public performance, public display of or any other use of this source code and/or any other information and/or material contained herein without the prior written consent of CARIAD SE is strictly prohibited and in violation of applicable laws.
+# The receipt or possession of this source code and/or related information does not convey or imply any rights to reproduce, disclose or distribute its contents or to manufacture, use or sell anything that it may describe in whole or in part.
+
+# trigger:
+#   branches:
+#     include:
+#       - main
+#       - 'cheetahs/*'
+#   paths:
+#     include:
+#       - frontend/cc-blp-vue/**
+#       - integration/pipelines/build_and_deploy_blp_vue.yaml
+trigger:
+  branches:
+    include:
+      - 'main'
+
+pr:
+  branches:
+    include:
+      - 'main'
+
+parameters:
+  - name: stage
+    type: string
+    default: 'dev'
+    displayName: 'Please chose the correct Stage'
+    values:
+      - 'dev'
+  - name: environment
+    type: string
+    default: 'gitc'
+    displayName: 'Please choose the correct environment'
+    values:
+      - 'gitc'
+  - name: branch
+    type: string
+    default: ''
+    displayName: 'github branch which will be built'
+
+  - name: wait
+    displayName: 'Wait for execution'
+    type: boolean
+    default: true
+  # - name: modules
+  #   type: object
+  #   default:
+  #     cc_ui_utils: cc_ui_utils
+  - name: deployable_modules
+    type: object
+    default:
+      cc_blp_vue: cc_blp_vue
+  - name: specs
+    type: object
+    default:
+      - general
+  - name: team
+    displayName: 'Team'
+    type: string
+    default: 'cheetahs'
+
+variables:
+  - group: RepoAccess
+  - template: ./../variables/shared_variables.yaml
+    parameters:
+      stage: ${{ parameters.stage }}
+      environment: ${{ parameters.environment }}
+
+  - name: YARN_CACHE_FOLDER
+    value: $(Pipeline.Workspace)/.yarn
+
+  - name: DOCKER_CACHE_FOLDER
+    value: $(Pipeline.Workspace)/docker
+
+  - name: DLCM_CC_BLUEPRINTS_PATH
+    value: $(Build.SourcesDirectory)/frontend
+
+  - name: BLP_VUE_ROOT
+    value: $(DLCM_CC_BLUEPRINTS_PATH)/cc-blp-vue
+
+stages:
+  - stage: dev
+    pool: $(AgentPool)
+    displayName: 'Containerize vue blueprint'
+
+    jobs:
+      - job: Build_blp_vue_image
+        pool: $(AgentPool)
+
+        steps:
+        - checkout: self
+          path: s
+        - script: |
+            echo "Building Blp vue..."
+            cd $(BLP_VUE_ROOT)
+            yarn cache clean
+            yarn install --force
+            yarn build      
+            git log
+          displayName: 'Checkout custom DLCM_CC_Blueprints repo'
+
+        - task: Docker@2
+          displayName: Build blp vue Image
+          inputs:
+            command: build
+            buildContext: $(BLP_VUE_ROOT)
+            Dockerfile: $(BLP_VUE_ROOT)/Dockerfile
+            containerRegistry: Dlcm-dev-acr
+            repository: dlcm/cc_blp_vue
+            tags: latest
+        - task: Docker@2
+          displayName: Push blp vue to Dlcm-dev-acr
+          inputs:
+            command: push
+            containerRegistry: Dlcm-dev-acr
+            repository: dlcm/cc_blp_vue
+            tags: latest
+
+  - stage: deploy_dev
+    displayName: 'Deploy vue blueprint'
+    jobs:
+
+      - ${{ each module in parameters.deployable_modules }}:
+          - template: templates/deploy_cc_blp_vue.yaml
+            parameters:
+              name: ${{module.value}}
+              agentPool: 'DLCM-dev-Pool'
+              aksEnvironment: $(AksEnvironmentName)
+              serviceConnection: $(ServiceConnection)
+              tag: ${{ parameters.team }}
+              stage: 'dev'
+              namespace: ${{parameters.team}}
+              KeyvaultName: $(KeyvaultName)
+              RegistryLoginServer: $(RegistryLoginServer)
