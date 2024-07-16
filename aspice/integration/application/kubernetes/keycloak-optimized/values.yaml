@@ -12,10 +12,11 @@
 
 replicaCount: 1
 image:
-  repository:
-  tag: latest
+  repository: dlcmdevsharedacrregistry.azurecr.io/dlcm/keycloak-optimized
+  tag: cheetahs
   pullPolicy: Always
-
+imagePullSecrets:
+  - name: acr-creds
 
 env:
   KEYCLOAK_ADMIN: admin

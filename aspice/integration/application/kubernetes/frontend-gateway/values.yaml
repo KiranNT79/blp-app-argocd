@@ -16,9 +16,9 @@ image:
   repository: dlcmdevsharedacrregistry.azurecr.io/dlcm/frontend-gateway
   tag: develop
   pullPolicy: Always
-  imagePullSecrets:
-    - name: regcred
 
+imagePullSecrets:
+  - name: acr-creds
 
 nameOverride: ""
 fullnameOverride: ""
