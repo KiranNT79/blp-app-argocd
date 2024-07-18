@@ -1,11 +1,11 @@
 name: CD Pipeline
 
-# on:
-#   push:
-#     paths:
-#       - 'helm/cc-blp-react/**'
-#       - '.github/workflows/cd.yml'
-#       - 'argocd-application.yaml'
+on:
+  push:
+    paths:
+      - 'aspice/integration/application/kubernetes/cc-shell/**'
+      - '.github/workflows/argocd-deployment.yaml'
+      # - 'argocd-application.yaml'
 
 jobs:
   deploy:
