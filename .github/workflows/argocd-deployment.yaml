@@ -20,12 +20,7 @@ jobs:
         chmod +x /usr/local/bin/argocd
         echo "/usr/local/bin" >> $GITHUB_PATH
       shell: bash
-    
-    - name: Verify ArgoCD CLI Installation
-      run: |
-        argocd version
-      shell: bash
-    
+
     - name: Login to ArgoCD
       run: |
         argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
