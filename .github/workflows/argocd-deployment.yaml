@@ -5,7 +5,6 @@ on:
     paths:
       - 'aspice/integration/application/kubernetes/cc-shell/**'
       - '.github/workflows/argocd-deployment.yaml'
-      # - 'argocd-application.yaml'
 
 jobs:
   deploy:
@@ -14,7 +13,19 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-          
+
+    - name: Install ArgoCD CLI
+      run: |
+        curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.3.4/argocd-linux-amd64
+        chmod +x /usr/local/bin/argocd
+        echo "/usr/local/bin" >> $GITHUB_PATH
+      shell: bash
+    
+    - name: Verify ArgoCD CLI Installation
+      run: |
+        argocd version
+      shell: bash
+    
     - name: Login to ArgoCD
       run: |
         argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
@@ -26,4 +37,3 @@ jobs:
     - name: Sync ArgoCD Application
       run: |
         argocd app sync cc-shell
-
