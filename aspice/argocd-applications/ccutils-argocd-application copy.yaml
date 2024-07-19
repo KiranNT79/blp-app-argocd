@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cc-ui-utils
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  project: default
+  source:
+    repoURL: https://github.com/KiranNT79/blp-app-argocd
+    targetRevision: HEAD
+    path: aspice/integration/application/kubernetes/cc-ui-utils
+    helm:
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
